@@ -1,5 +1,8 @@
 let deckId = '';
 
+const player1Card = document.querySelector('.player1Card');
+const player2Card = document.querySelector('.player2Card');
+
 // Load a deck
 
 if (localStorage.getItem('deckId')) {
@@ -21,9 +24,6 @@ function loadDeck() {
     .catch(err => console.log(err));
 }
 
-const player1Card = document.querySelector('.player1Card');
-const player2Card = document.querySelector('.player2Card');
-
 const pickBtn = document.querySelector('.pickBtn');
 const result = document.querySelector('.result');
 
@@ -31,9 +31,12 @@ function drawCards() {
   fetch(`https://www.deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
     .then(res => res.json())
     .then(data => {
+      if (data.remaining === 0) {
+        loadDeck();
+      }
       player1Card.src = data.cards[0].image;
       player2Card.src = data.cards[1].image;
-
+      console.log(data);
       let player1Value = data.cards[0].code[0];
       let player2Value = data.cards[1].code[0];
 

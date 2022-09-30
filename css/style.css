@@ -2,20 +2,62 @@
 /* CSS
 /*******************************************/
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
 /* Box Model Hack */
-*{
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Roboto', 'sans-serif';
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-img{
+img {
   display: block;
   margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+body {
+  text-align: center;
+  background: url(../img/table2.jpg) no-repeat top left;
+  color: #FFF;
+}
+
+.pickBtn {
+  background: lightgreen;
+  border-color: green;
+  border-top: none;
+  border-left: none;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.player1-wrapper,
+.player2-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.player1,
+.player2 {
+  padding: 10px;
+}
+
