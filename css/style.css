@@ -31,14 +31,18 @@ img {
 body {
   text-align: center;
   background: url(../img/table2.jpg) no-repeat top left;
+  background-size: cover;
+  backdrop-filter: blur(2px);
   color: #FFF;
 }
 
+h1 {
+  margin: 60px;
+}
+
 .pickBtn {
-  background: lightgreen;
-  border-color: green;
-  border-top: none;
-  border-left: none;
+  background: #FFF;
+  border-color: #FFF; 
   border-radius: 4px;
   padding: 4px;
   cursor: pointer;
@@ -47,7 +51,7 @@ body {
 .card-wrapper {
   display: flex;
   justify-content: space-around;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .player1-wrapper,
@@ -59,5 +63,11 @@ body {
 .player1,
 .player2 {
   padding: 10px;
+}
+
+.result-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
