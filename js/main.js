@@ -68,12 +68,25 @@ function drawCards() {
       } else if (player2Value > player1Value) {
         result.textContent = 'Player 2 Wins!';
       } else {
-        result.textContent = 'It\'s draw!';
+        result.textContent = 'It\'s draw! Flip a coin!';
+        pickBtn.textContent = 'Flip a Coin!'
+        flipCoin();
       }
       console.log(player1Value, player2Value)
     })
     .catch(err => console.log(err));
 }
 
+
+function flipCoin() {
+  let generateRandom = Math.round(Math.random() * 10);
+  console.log(generateRandom);
+  if (generateRandom < 5) {
+    result.textContent = `Flipped a coin, it was head. Player 1 Wins!`;
+  } else {
+    result.textContent = `Flipped a coin, it was tail. Player 2 Wins!`;
+  }
+  pickBtn.textContent = 'Pick Cards';
+}
 
 pickBtn.addEventListener('click', drawCards);
